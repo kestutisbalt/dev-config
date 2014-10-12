@@ -26,6 +26,10 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 
+" Disable YouCompleteMe file confirmation message
+let g:ycm_confirm_extra_conf = 0
+
+
 syntax enable
 
 
