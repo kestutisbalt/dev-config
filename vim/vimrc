@@ -1,0 +1,103 @@
+" Not combatible with vi editor
+set nocompatible
+
+
+" Disables file type detection
+filetype off
+
+
+" Enables loading the plugin files for specific file types
+filetype plugin on
+
+
+" Enables loading the indent file for specific file type
+filetype indent on
+
+
+" Disables loading of the indent file for the plugin
+filetype plugin indent off
+
+
+" Setup Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmaric/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
+
+
+syntax enable
+
+
+" Shows hidden symbols
+set list
+
+
+" Enables mouse support
+set mouse=a
+
+
+" Shows line numbers
+set number
+
+
+" Displays current line and column numbers
+set ruler
+
+
+" Tab size measured in spaces
+set tabstop=8
+
+
+" Prevents from filling tabs with spaces
+set noexpandtab
+
+
+" Auto-indent new lines
+set autoindent
+
+
+" Use 'C' style indent
+set cindent
+
+
+" Sets vertical column
+set colorcolumn=79
+
+
+" Highlights search results
+set hls
+
+
+" Do not use backup files
+set noswapfile
+
+
+" Backspace mapping
+set backspace=indent,eol,start
+
+
+" Hidden symbols representation
+set listchars=tab:>-,trail:.,eol:$
+
+
+" Sets colors number
+set t_Co=256
+
+
+" Sets color scheme
+colorscheme kestutisbalt
+
+
+" Highlights eof and tab symbols
+highlight NonText ctermfg=DarkGray guifg=grey
+highlight SpecialKey ctermfg=DarkGray guifg=grey
+
+
+" Highlights trailing white spaces
+highlight ExtraWhiteSpace ctermbg=red guibg=red
+match ExtraWhiteSpace /\s\+$/
+
+
+" Removes trailing white spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
